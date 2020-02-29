@@ -1,0 +1,69 @@
+% Created 2020-02-29 Sat 14:15
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Sonny Jansson}
+\date{\today}
+\title{settings}
+\hypersetup{
+ pdfauthor={Sonny Jansson},
+ pdftitle={settings},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.3 (Org mode 9.4)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{General emacs config}
+\label{sec:org5d30e8c}
+\subsection{Emacs server}
+\label{sec:org9ce2a46}
+\subsubsection{Start server}
+\label{sec:org04546a3}
+\begin{verbatim}
+(server-start)
+\end{verbatim}
+\subsection{Keybinds}
+\label{sec:org34b6c4e}
+\subsubsection{(Leader - DEL) Switch to last buffer}
+\label{sec:org8571374}
+\begin{verbatim}
+(map! :leader :desc "Switch to last buffer" "DEL" #'evil-switch-to-windows-last-buffer)
+\end{verbatim}
+
+\subsubsection{(Leader - SPC) M-x}
+\label{sec:org99aab23}
+\begin{verbatim}
+(map! :leader :desc "M-x" "SPC" #'counsel-M-x)
+\end{verbatim}
+
+\subsubsection{(Leader - :) Find file in project}
+\label{sec:orgeb88882}
+\begin{verbatim}
+(map! :leader :desc "Find file in project" ":" #'+ivy/projectile-find-file)
+\end{verbatim}
+
+\section{Language support}
+\label{sec:orgccbc8e5}
+\subsection{File extension mode auto-load}
+\label{sec:orgc3f630b}
+\#+BEGIN\textsubscript{SRC} emacs-lisp
+; (add-to-list 'auto-mode-alist '(``$\backslash$\.elm$\backslash$\''' . elm-mode))
+\#+END\textsubscript{SRC}\_
+\end{document}

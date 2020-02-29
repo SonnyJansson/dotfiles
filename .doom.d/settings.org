@@ -1,0 +1,29 @@
+#+TITLE: settings
+
+* General emacs config
+** Emacs server
+*** Start server
+#+BEGIN_SRC emacs-lisp
+(server-start)
+#+END_SRC
+** Keybinds
+*** (Leader - DEL) Switch to last buffer
+#+BEGIN_SRC emacs-lisp
+(map! :leader :desc "Switch to last buffer" "DEL" #'evil-switch-to-windows-last-buffer)
+#+END_SRC
+
+*** (Leader - SPC) M-x
+#+BEGIN_SRC emacs-lisp
+(map! :leader :desc "M-x" "SPC" #'counsel-M-x)
+#+END_SRC
+
+*** (Leader - :) Find file in project
+#+BEGIN_SRC emacs-lisp
+(map! :leader :desc "Find file in project" ":" #'+ivy/projectile-find-file)
+#+END_SRC
+
+* Language support
+** File extension mode auto-load
+#+BEGIN_SRC emacs-lisp
+; (add-to-list 'auto-mode-alist '("\\.elm\\'" . elm-mode))
+#+END_SRC_
