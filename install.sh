@@ -1,20 +1,31 @@
-#!/usr/bin/env sh
+#!/bin/sh
+
+cd $(dirname $0)
+D="$(pwd)"
 
 # Doom Emacs
-ln -sv ./.doom.d ~
+ln -sv "$D/.doom.d" ~
 
 # i3
-ln -sv ./.i3 ~
+ln -sv "$D/.i3" ~
 
-# Miscellaneous
-ln -sv ./misc/.vimrc ~
-ln -sv ./misc/.xinitrc ~
-ln -sv ./misc/.Xresources ~
-ln -sv ./misc/.zshrc ~
+# Fonts
+ln -sv "$D/.fonts" ~
+
+# Scripts
+ln -sv "$D/.scripts" ~
+
+# Wallpaper
+
+ln -sv "$D/.wallpaper" ~
 
 # .config files
+mkdir -p ~/.config
+ln -sv "$D/.config/polybar" ~/.config
 # ln -sv ./.config
-# ln -sv ./.config
-# ln -sv ./.config
-# ln -sv ./.config
-# ln -sv ./.config
+
+# Miscellaneous
+ln -sv "$D/misc/.vimrc" ~
+ln -sv "$D/misc/.xinitrc" ~
+ln -sv "$D/misc/.Xresources" ~
+ln -sv "$D/misc/.zshrc" ~
