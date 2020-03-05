@@ -1,7 +1,7 @@
 # -*- mode: snippet -*
 # name: project-template
 # uuid: project-template
-# key: project
+# key: project                                                                                                                
 # --
 
 * ${1:name} :PROJECT:
@@ -9,29 +9,40 @@
 
 This is for stating the goal of the project.
 
+*** Reasons
+
+Why am I doing this project? What does it help achieve?
+
+*** Outcome
+
+What will the project look like once it is completed? What change will it have had?
+
 ** Values
-- This section is
-- For stating the
-- Values and criteria
-- For the project
+ - This section is
+ - For stating the
+ - Values and criteria
+ - For the project
+ - Acts as a
+ - Checklist and a
+ - Set of guidlines
+ - For the project
 
 ** Ideas
 - This section is
-- For noting down
-- Various ideas
+- For quickly noting
+- Down various ideas
 
-** Project description
-This is a project description that summarises the project and its current state.
+** Project diary
+
 This shows the ideological representation of the project and acts as an extended
 "stream of consciousness" for the project, where the current direction of the
 project is noted as well as any questions, considerations and arguments/evaluations regarding the project
-are written down. It acts as a project diary.
+are written down. It acts as a project diary. Entries should be timestamped.
+
+** Project synopsis
+
+This is a project description that summarises the project and its current state. It is a more concise version of project notes. It should read like a README file for a Github repo.
 
 ** Noticeboard
 
-*** This section is for writing down todo items as things come up and contains as a result acts as a sort of todo history of the entire project.
-
-** History
-
-This section is for noting down changes in how the project is approached and
-acts as a changelog for the project.
+This section is for writing down todo items as things come up and contains as a result acts as a sort of todo history of the entire project.

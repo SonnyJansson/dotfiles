@@ -41,6 +41,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# Open Emacs
+bindsym $mod+BackSpace exec em.sh
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -224,3 +227,6 @@ exec_always ~/.scripts/launch_redshift.sh
 
 # Start dropbox
 exec_always ~/.dropbox-dist/dropboxd
+
+# Bind print screen
+bindsym Print exec flameshot gui

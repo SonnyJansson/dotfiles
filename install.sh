@@ -22,6 +22,7 @@ ln -sv "$D/.wallpaper" ~
 # .config files
 mkdir -p ~/.config
 ln -sv "$D/.config/polybar" ~/.config
+ln -sv "$D/.config/ranger" ~/.config
 # ln -sv ./.config
 
 # Miscellaneous
