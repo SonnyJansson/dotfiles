@@ -191,18 +191,18 @@ bindsym $mod+r mode "resize"
 exec_always --no-startup-id bash ~/.config/polybar/launch.sh
 
 ## Pulse Audio controls
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 # Amixer Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
-bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
+# bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
+# bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
+# bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 2
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 2
 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec ~/.config/i3/touchpadtoggle.sh
@@ -220,7 +220,10 @@ exec --no-startup-id setxkbmap -layout fi
 exec_always --no-startup-id compton
 
 # Start nm applet
-exec_always nm-applet --no-agent
+# exec_always nm-applet --no-agent
+
+# Start blueman applet
+exec_always blueman-applet
 
 # Start redshift
 exec_always ~/.scripts/launch_redshift.sh

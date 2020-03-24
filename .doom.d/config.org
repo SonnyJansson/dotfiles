@@ -35,14 +35,20 @@
 #+END_SRC_
 * Org mode
 ** Basic org settings
-#+BEGIN_SRC emacs-lisp
+
+Specifies the org-directory and a folder for project org-files
+
+#+BEGIN_SRC emacs-lisp :results silent
 (setq org-directory "~/org/")
 (setq org-projects (concat org-directory "Projects/"))
 #+END_SRC
 
-#+BEGIN_SRC emacs-lisp
-(setq org-agenda-files '(org-directory org-projects))
+Add agenda files
+
+#+BEGIN_SRC emacs-lisp :results silent
+(setq org-agenda-files (list (concat org-directory "main.org") org-projects))
 #+END_SRC
+
 ** Org-drill
 #+BEGIN_SRC emacs_lisp
 (use-package! org-drill)
@@ -53,26 +59,87 @@
 #+END_SRC
 *** Templates
 
+The project tag is excluded from inheritance. It does not make sense for the
+subnodes to also be tagged as projects and makes the task of finding projects by
+tag easier.
+
+#+BEGIN_SRC emacs-lisp :results silent
+(setq org-tags-exclude-from-inheritance '("PROJECT"))
+#+END_SRC
+
+The following defines two functions for getting a list of projects:
+ - org-find-projects :: Finds all headlines in the agenda files with a :PROJECT: tag and returns
+   the headline name
+ - all-projects-files :: Finds all files in the org-projects and returns their
+   names
+  
+Currently, org-find-projects is preferred since it does not use the (usually
+uglier) project file name and allows projects to be stored not only as separate files
+
+#+BEGIN_SRC emacs-lisp :results silent
+(defun org-find-projects ()
+  "Produces a list of all headlines with the :PROJECT: tag"
+  (interactive)
+  (setq files (org-agenda-files nil 'ifmode))
+  (setq rtnall nil)
+  (setq matcher (org-make-tags-matcher "+PROJECT"))
+  (setq match (cdr matcher))
+  (while (setq file (pop files))
+    (setq buffer (org-get-agenda-file-buffer file))
+    (with-current-buffer buffer
+      (setq rtn (org-scan-tags '(org-get-heading t t t t)
+                               match
+                               nil))
+      (prin1 rtn)
+      (setq rtnall (append rtnall rtn))))
+  rtnall)
+
+(defun all-project-files ()
+  "Returns a list of all project files"
+    (directory-files org-projects nil "\\.org$"))
+; (make-obsolete all-project-files "This function has been replaced by org-find-projects")
+#+END_SRC
+
 This snippet is used for constructing a completion table string that can be used
 in an org capture template to give a choice between different project files.
 #+BEGIN_SRC emacs-lisp
-(defun all-project-files ()
-  "Returns a list of all project files"
-    (interactive)
-    (directory-files org-projects nil "\\.org$"))
-
 (defun project-files-to-choices ()
   "Make choice string out of project files"
   (let (
     (prepend-all (lambda (x xs) (if xs (concat (concat x (car xs)) (funcall prepend-all x (cdr xs))) ""))))
-    (concat "%^{Project" (funcall prepend-all "|" (all-project-files)) "}")))
+    (concat "%^{Project" (funcall prepend-all "|" (org-find-projects)) "}")))
 #+END_SRC
 
+#+RESULTS:
+: project-files-to-choices
+
 My captures templates are as such:
- - Project idea
-   - Captures an idea that I have for a specific project
-#+BEGIN_SRC emacs-lisp
+ - To do :: Captures a general todo item without a specific date attached
+ - Scheduled :: Captures a scheduled todo item
+ - Deadline :: Captures a todo item with a deadline
+ - Project idea :: Captures an idea that I have for a specific project
+ - Loose note :: Captures a loose note that is yet to be refiled
+ - Random idea :: Captures a random idea
+
+#+BEGIN_SRC emacs-lisp :results silent
 (setq org-capture-templates
-      '(("p" "Project idea" entry (file+headline "inbox.org" "Projects")
-         "* Project idea: %(project-files-to-choices)")))
+      '(("t" "To do" entry (file+headline "inbox.org" "To do")
+         "* TODO %? %^G \n")
+        ("s" "Scheduled" entry (file+headline "inbox.org" "To do")
+         "* TODO %? %^G \nSCHEDULED: %^T")
+        ("d" "Deadline" entry (file+headline "inbox.org" "To do")
+         "* TODO %? %^G \nDEADLINE: %^T")
+        ("p" "Project idea" entry (file+headline "inbox.org" "Projects")
+         "* Project idea: %(project-files-to-choices) %T\n%?")
+        ("n" "Loose note" entry (file+headline "inbox.org" "Loose notes")
+         "* %T\n%?")
+        ("i" "Random idea" entry (file+headline "inbox.org" "Ideas")
+         "* %T\n%?")
+        ("w" "Workout" entry (file+headline "main.org" "Workout journal")
+         "* %^t\n%?")
+        ("l" "Ledger")
+        ("lc" "Cash" plain (file "money")
+         "%(org-read-date) * %^{Payee}
+Expenses:Cash
+Expenses:%^{Account} %^{Amount}")))
 #+END_SRC
