@@ -1,8 +1,3 @@
-(use-package! org-drill)
-
-(setq user-full-name "Sonny Jansson")
-(setq user-mail-address "sonnyjansson01@gmail.com")
-
 (server-start)
 
 (map! :leader :desc "Switch to last buffer" "DEL" #'evil-switch-to-windows-last-buffer)
@@ -11,7 +6,19 @@
 
 (map! :leader :desc "Find file in project" ":" #'+ivy/projectile-find-file)
 
-(setq org-directory "~/org/")
+; (add-to-list 'auto-mode-alist '("\\.elm\\'" . elm-mode))
+
+(setq org-use-dropbox t)
+
+(if org-use-dropbox
+  (progn
+    (make-directory "~/Dropbox/org/" t)
+    (setq org-directory "~/Dropbox/org/"))
+  (progn
+    (make-directory "~/org/" t)
+    (setq org-directory "~/org/")))
+
+(make-directory (concat org-directory "Projects/") t)
 (setq org-projects (concat org-directory "Projects/"))
 
 (setq org-agenda-files (list (concat org-directory "main.org") org-projects))
@@ -68,3 +75,8 @@
          "%(org-read-date) * %^{Payee}
 Expenses:Cash
 Expenses:%^{Account} %^{Amount}")))
+
+(make-directory (concat org-directory "org-roam/") t)
+(setq org-roam-directory (concat org-directory "org-roam/"))
+
+(setq org-roam-tag-sources '(prop all-directories))

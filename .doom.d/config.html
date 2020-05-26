@@ -4,12 +4,11 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-03-06 Fri 00:14 -->
+<!-- 2020-05-26 Tue 14:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Literate config</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="Sonny Jansson" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -226,53 +225,53 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3be2f8c">1. User variables</a>
+<li><a href="#orgead9e8a">1. User variables</a>
 <ul>
-<li><a href="#org891c395">1.1. Name and email</a></li>
+<li><a href="#org25d92af">1.1. Name and email</a></li>
 </ul>
 </li>
-<li><a href="#orgf1a00e2">2. General emacs config</a>
+<li><a href="#org4d9c6d1">2. General emacs config</a>
 <ul>
-<li><a href="#org5b425ec">2.1. Emacs server</a>
+<li><a href="#orga2f64e4">2.1. Emacs server</a>
 <ul>
-<li><a href="#orgb832f75">2.1.1. Start server</a></li>
+<li><a href="#org8b72181">2.1.1. Start server</a></li>
 </ul>
 </li>
-<li><a href="#org54910c9">2.2. Keybinds</a>
+<li><a href="#org95e779d">2.2. Keybinds</a>
 <ul>
-<li><a href="#orgd6b4594">2.2.1. (Leader - DEL) Switch to last buffer</a></li>
-<li><a href="#org1371f23">2.2.2. (Leader - SPC) M-x</a></li>
-<li><a href="#org5e34adc">2.2.3. (Leader - :) Find file in project</a></li>
+<li><a href="#orgd4f1f7e">2.2.1. (Leader - DEL) Switch to last buffer</a></li>
+<li><a href="#orgce594c4">2.2.2. (Leader - SPC) M-x</a></li>
+<li><a href="#orgfb8b591">2.2.3. (Leader - :) Find file in project</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org3535580">3. Language support</a>
+<li><a href="#orgaed4522">3. Language support</a>
 <ul>
-<li><a href="#org78d199a">3.1. File extension mode auto-load</a></li>
+<li><a href="#orgea7a6b9">3.1. File extension mode auto-load</a></li>
 </ul>
 </li>
-<li><a href="#orgf2c9ced">4. Org mode</a>
+<li><a href="#orgd42c60d">4. Org mode</a>
 <ul>
-<li><a href="#orgeac3a70">4.1. Basic org settings</a></li>
-<li><a href="#org2cc7607">4.2. Org-drill</a></li>
-<li><a href="#orgf1994cb">4.3. Org capture</a>
+<li><a href="#org3dcb2b7">4.1. Basic org settings</a></li>
+<li><a href="#org148f7a5">4.2. Org capture</a>
 <ul>
-<li><a href="#org9be6a6e">4.3.1. Templates</a></li>
+<li><a href="#orgd879173">4.2.1. Templates</a></li>
 </ul>
 </li>
+<li><a href="#org0aa97bf">4.3. Org-roam</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org3be2f8c" class="outline-2">
-<h2 id="org3be2f8c"><span class="section-number-2">1</span> User variables</h2>
+<div id="outline-container-orgead9e8a" class="outline-2">
+<h2 id="orgead9e8a"><span class="section-number-2">1</span> User variables</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org891c395" class="outline-3">
-<h3 id="org891c395"><span class="section-number-3">1.1</span> Name and email</h3>
+<div id="outline-container-org25d92af" class="outline-3">
+<h3 id="org25d92af"><span class="section-number-3">1.1</span> Name and email</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">setq</span> <span style="color: #dcaeea;">user-full-name</span> <span style="color: #98be65;">"Sonny Jansson"</span><span style="color: #51afef;">)</span>
@@ -282,16 +281,16 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orgf1a00e2" class="outline-2">
-<h2 id="orgf1a00e2"><span class="section-number-2">2</span> General emacs config</h2>
+<div id="outline-container-org4d9c6d1" class="outline-2">
+<h2 id="org4d9c6d1"><span class="section-number-2">2</span> General emacs config</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org5b425ec" class="outline-3">
-<h3 id="org5b425ec"><span class="section-number-3">2.1</span> Emacs server</h3>
+<div id="outline-container-orga2f64e4" class="outline-3">
+<h3 id="orga2f64e4"><span class="section-number-3">2.1</span> Emacs server</h3>
 <div class="outline-text-3" id="text-2-1">
 </div>
-<div id="outline-container-orgb832f75" class="outline-4">
-<h4 id="orgb832f75"><span class="section-number-4">2.1.1</span> Start server</h4>
+<div id="outline-container-org8b72181" class="outline-4">
+<h4 id="org8b72181"><span class="section-number-4">2.1.1</span> Start server</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #c678dd;">server-start</span><span style="color: #51afef;">)</span>
@@ -300,12 +299,12 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org54910c9" class="outline-3">
-<h3 id="org54910c9"><span class="section-number-3">2.2</span> Keybinds</h3>
+<div id="outline-container-org95e779d" class="outline-3">
+<h3 id="org95e779d"><span class="section-number-3">2.2</span> Keybinds</h3>
 <div class="outline-text-3" id="text-2-2">
 </div>
-<div id="outline-container-orgd6b4594" class="outline-4">
-<h4 id="orgd6b4594"><span class="section-number-4">2.2.1</span> (Leader - DEL) Switch to last buffer</h4>
+<div id="outline-container-orgd4f1f7e" class="outline-4">
+<h4 id="orgd4f1f7e"><span class="section-number-4">2.2.1</span> (Leader - DEL) Switch to last buffer</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">map!</span> <span style="color: #c678dd;">:leader</span> <span style="color: #c678dd;">:desc</span> <span style="color: #98be65;">"Switch to last buffer"</span> <span style="color: #98be65;">"DEL"</span> <span style="color: #51afef;">#'</span><span style="color: #ECBE7B;">evil-switch-to-windows-last-buffer</span><span style="color: #51afef;">)</span>
@@ -314,8 +313,8 @@
 </div>
 </div>
 
-<div id="outline-container-org1371f23" class="outline-4">
-<h4 id="org1371f23"><span class="section-number-4">2.2.2</span> (Leader - SPC) M-x</h4>
+<div id="outline-container-orgce594c4" class="outline-4">
+<h4 id="orgce594c4"><span class="section-number-4">2.2.2</span> (Leader - SPC) M-x</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">map!</span> <span style="color: #c678dd;">:leader</span> <span style="color: #c678dd;">:desc</span> <span style="color: #98be65;">"M-x"</span> <span style="color: #98be65;">"SPC"</span> <span style="color: #51afef;">#'</span><span style="color: #ECBE7B;">counsel-M-x</span><span style="color: #51afef;">)</span>
@@ -324,8 +323,8 @@
 </div>
 </div>
 
-<div id="outline-container-org5e34adc" class="outline-4">
-<h4 id="org5e34adc"><span class="section-number-4">2.2.3</span> (Leader - :) Find file in project</h4>
+<div id="outline-container-orgfb8b591" class="outline-4">
+<h4 id="orgfb8b591"><span class="section-number-4">2.2.3</span> (Leader - :) Find file in project</h4>
 <div class="outline-text-4" id="text-2-2-3">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">map!</span> <span style="color: #c678dd;">:leader</span> <span style="color: #c678dd;">:desc</span> <span style="color: #98be65;">"Find file in project"</span> <span style="color: #98be65;">":"</span> <span style="color: #51afef;">#'</span><span style="color: #ECBE7B;">+ivy/projectile-find-file</span><span style="color: #51afef;">)</span>
@@ -336,34 +335,50 @@
 </div>
 </div>
 
-<div id="outline-container-org3535580" class="outline-2">
-<h2 id="org3535580"><span class="section-number-2">3</span> Language support</h2>
+<div id="outline-container-orgaed4522" class="outline-2">
+<h2 id="orgaed4522"><span class="section-number-2">3</span> Language support</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org78d199a" class="outline-3">
-<h3 id="org78d199a"><span class="section-number-3">3.1</span> File extension mode auto-load</h3>
+<div id="outline-container-orgea7a6b9" class="outline-3">
+<h3 id="orgea7a6b9"><span class="section-number-3">3.1</span> File extension mode auto-load</h3>
 <div class="outline-text-3" id="text-3-1">
-<p>
-#+BEGIN<sub>SRC</sub> emacs-lisp
-; (add-to-list &rsquo;auto-mode-alist &rsquo;(&ldquo;\\.elm\\&rsquo;&rdquo; . elm-mode))
-#+END<sub>SRC</sub>_
-</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #5B6268;">; </span><span style="color: #5B6268;">(add-to-list 'auto-mode-alist '("\\.elm\\'" . elm-mode))</span>
+</pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgf2c9ced" class="outline-2">
-<h2 id="orgf2c9ced"><span class="section-number-2">4</span> Org mode</h2>
+</div>
+<div id="outline-container-orgd42c60d" class="outline-2">
+<h2 id="orgd42c60d"><span class="section-number-2">4</span> Org mode</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgeac3a70" class="outline-3">
-<h3 id="orgeac3a70"><span class="section-number-3">4.1</span> Basic org settings</h3>
+<div id="outline-container-org3dcb2b7" class="outline-3">
+<h3 id="org3dcb2b7"><span class="section-number-3">4.1</span> Basic org settings</h3>
 <div class="outline-text-3" id="text-4-1">
+<p>
+Use org files in Dropbox or in ~/org
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">setq</span> org-use-dropbox t<span style="color: #51afef;">)</span>
+</pre>
+</div>
+
 <p>
 Specifies the org-directory and a folder for project org-files
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">setq</span> <span style="color: #dcaeea;">org-directory</span> <span style="color: #98be65;">"~/org/"</span><span style="color: #51afef;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">if</span> org-use-dropbox
+  <span style="color: #c678dd;">(</span><span style="color: #51afef;">progn</span>
+    <span style="color: #98be65;">(</span><span style="color: #c678dd;">make-directory</span> <span style="color: #98be65;">"~/Dropbox/org/"</span> t<span style="color: #98be65;">)</span>
+    <span style="color: #98be65;">(</span><span style="color: #51afef;">setq</span> <span style="color: #dcaeea;">org-directory</span> <span style="color: #98be65;">"~/Dropbox/org/"</span><span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span>
+  <span style="color: #c678dd;">(</span><span style="color: #51afef;">progn</span>
+    <span style="color: #98be65;">(</span><span style="color: #c678dd;">make-directory</span> <span style="color: #98be65;">"~/org/"</span> t<span style="color: #98be65;">)</span>
+    <span style="color: #98be65;">(</span><span style="color: #51afef;">setq</span> <span style="color: #dcaeea;">org-directory</span> <span style="color: #98be65;">"~/org/"</span><span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+
+<span style="color: #51afef;">(</span><span style="color: #c678dd;">make-directory</span> <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">concat</span> <span style="color: #dcaeea;">org-directory</span> <span style="color: #98be65;">"Projects/"</span><span style="color: #c678dd;">)</span> t<span style="color: #51afef;">)</span>
 <span style="color: #51afef;">(</span><span style="color: #51afef;">setq</span> org-projects <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">concat</span> <span style="color: #dcaeea;">org-directory</span> <span style="color: #98be65;">"Projects/"</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
 </pre>
 </div>
@@ -373,32 +388,23 @@ Add agenda files
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">setq</span> <span style="color: #dcaeea;">org-agenda-files</span> <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">list</span> <span style="color: #dcaeea;">org-directory</span> org-projects<span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">setq</span> <span style="color: #dcaeea;">org-agenda-files</span> <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">list</span> <span style="color: #98be65;">(</span><span style="color: #a9a1e1;">concat</span> <span style="color: #dcaeea;">org-directory</span> <span style="color: #98be65;">"main.org"</span><span style="color: #98be65;">)</span> org-projects<span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org2cc7607" class="outline-3">
-<h3 id="org2cc7607"><span class="section-number-3">4.2</span> Org-drill</h3>
+<div id="outline-container-org148f7a5" class="outline-3">
+<h3 id="org148f7a5"><span class="section-number-3">4.2</span> Org capture</h3>
 <div class="outline-text-3" id="text-4-2">
-<div class="org-src-container">
-<pre class="src src-emacs_lisp">(use-package! org-drill)
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-orgf1994cb" class="outline-3">
-<h3 id="orgf1994cb"><span class="section-number-3">4.3</span> Org capture</h3>
-<div class="outline-text-3" id="text-4-3">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">setq</span> <span style="color: #dcaeea;">org-default-notes-file</span> <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">concat</span> <span style="color: #dcaeea;">org-directory</span> <span style="color: #98be65;">"inbox.org"</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
 </pre>
 </div>
 </div>
-<div id="outline-container-org9be6a6e" class="outline-4">
-<h4 id="org9be6a6e"><span class="section-number-4">4.3.1</span> Templates</h4>
-<div class="outline-text-4" id="text-4-3-1">
+<div id="outline-container-orgd879173" class="outline-4">
+<h4 id="orgd879173"><span class="section-number-4">4.2.1</span> Templates</h4>
+<div class="outline-text-4" id="text-4-2-1">
 <p>
 The project tag is excluded from inheritance. It does not make sense for the
 subnodes to also be tagged as projects and makes the task of finding projects by
@@ -488,17 +494,46 @@ My captures templates are as such:
         <span style="color: #98be65;">(</span><span style="color: #98be65;">"n"</span> <span style="color: #98be65;">"Loose note"</span> entry <span style="color: #51afef;">(</span>file+headline <span style="color: #98be65;">"inbox.org"</span> <span style="color: #98be65;">"Loose notes"</span><span style="color: #51afef;">)</span>
          <span style="color: #98be65;">"* %T\n%?"</span><span style="color: #98be65;">)</span>
         <span style="color: #98be65;">(</span><span style="color: #98be65;">"i"</span> <span style="color: #98be65;">"Random idea"</span> entry <span style="color: #51afef;">(</span>file+headline <span style="color: #98be65;">"inbox.org"</span> <span style="color: #98be65;">"Ideas"</span><span style="color: #51afef;">)</span>
-        <span style="color: #98be65;">"* %T\n%?"</span><span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+         <span style="color: #98be65;">"* %T\n%?"</span><span style="color: #98be65;">)</span>
+        <span style="color: #98be65;">(</span><span style="color: #98be65;">"w"</span> <span style="color: #98be65;">"Workout"</span> entry <span style="color: #51afef;">(</span>file+headline <span style="color: #98be65;">"main.org"</span> <span style="color: #98be65;">"Workout journal"</span><span style="color: #51afef;">)</span>
+         <span style="color: #98be65;">"* %^t\n%?"</span><span style="color: #98be65;">)</span>
+        <span style="color: #98be65;">(</span><span style="color: #98be65;">"l"</span> <span style="color: #98be65;">"Ledger"</span><span style="color: #98be65;">)</span>
+        <span style="color: #98be65;">(</span><span style="color: #98be65;">"lc"</span> <span style="color: #98be65;">"Cash"</span> plain <span style="color: #51afef;">(</span>file <span style="color: #98be65;">"money"</span><span style="color: #51afef;">)</span>
+         <span style="color: #98be65;">"%(org-read-date) * %^{Payee}</span>
+<span style="color: #98be65;">Expenses:Cash</span>
+<span style="color: #98be65;">Expenses:%^{Account} %^{Amount}"</span><span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org0aa97bf" class="outline-3">
+<h3 id="org0aa97bf"><span class="section-number-3">4.3</span> Org-roam</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+Set org-roam directory variable
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #c678dd;">make-directory</span> <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">concat</span> <span style="color: #dcaeea;">org-directory</span> <span style="color: #98be65;">"org-roam/"</span><span style="color: #c678dd;">)</span> t<span style="color: #51afef;">)</span>
+<span style="color: #51afef;">(</span><span style="color: #51afef;">setq</span> <span style="color: #dcaeea;">org-roam-directory</span> <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">concat</span> <span style="color: #dcaeea;">org-directory</span> <span style="color: #98be65;">"org-roam/"</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+</pre>
+</div>
+
+<p>
+I like to have org-roam automatically mark notes with tags included in the <code>#+ROAM_TAGS</code> property and all parent directories, up until the org-roam directory
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">setq</span> <span style="color: #dcaeea;">org-roam-tag-sources</span> <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span>prop all-directories<span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-</div>
 <div id="postamble" class="status">
-<p class="author">Author: Sonny Jansson</p>
-<p class="date">Created: 2020-03-06 Fri 00:14</p>
+<p class="date">Created: 2020-05-26 Tue 14:44</p>
 </div>
 </body>
 </html>
