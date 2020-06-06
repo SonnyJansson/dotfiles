@@ -9,15 +9,17 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/zyphicx/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
 export ALTERNATE_EDITOR=""
-export EDITOR="emacsclient -t"
-export VISUAL="emacsclient -c -a emacs"
+# export EDITOR="emacsclient -t"
+# export VISUAL="emacsclient -c -a emacs"
+export EDITOR="vim"
+export VISUAL="vim"
 
 PROMPT='%F{196}[%F{106}%n@%F{033}%m %~%F{196}]%F{255}%(!.#.$) %F{reset_color}'
 

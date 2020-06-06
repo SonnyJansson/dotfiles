@@ -167,3 +167,28 @@ I like to have org-roam automatically mark notes with tags included in the ~#+RO
 #+begin_src emacs-lisp :tangle yes
 (setq org-roam-tag-sources '(prop all-directories))
 #+end_src
+
+The org-roam-graph-viewer takes a path to a program that is then used for viewing graphs, but does not allow for command-line argument (I believe, haven't actually tried, but the documentation doesn't suggest it would). Therefore I use a shell script that is simply an alias for ~chromium --app~. Note that Firefox does not have an "app" mode, and therefore I use chromium instead.
+
+#+begin_src emacs-lisp :tangle yes
+(setq org-roam-graph-viewer "~/.scripts/chromium_without_toolbar.sh")
+#+end_src
+
+I like to use org-roam-server, here is the use-package configuration for item
+
+#+begin_src emacs-lisp :tangle yes
+(use-package org-roam-server
+  :ensure t
+  :config
+  (setq org-roam-server-host "127.0.0.1"
+        org-roam-server-port 8080
+        org-roam-server-authenticate nil
+        org-roam-server-label-truncate t
+        org-roam-server-label-truncate-length 60
+        org-roam-server-label-wrap-length 20))
+#+end_src
+** Org-journal
+
+#+begin_src emacs-lisp :tangle yes
+(setq org-journal-dir (concat org-directory "Journal/"))
+#+end_src

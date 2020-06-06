@@ -51,3 +51,5 @@
 ;(package! builtin-package :recipe (:branch "develop"))
 
 (package! org-drill)
+
+(package! org-roam-server)

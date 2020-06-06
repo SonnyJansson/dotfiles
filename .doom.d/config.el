@@ -80,3 +80,17 @@ Expenses:%^{Account} %^{Amount}")))
 (setq org-roam-directory (concat org-directory "org-roam/"))
 
 (setq org-roam-tag-sources '(prop all-directories))
+
+(setq org-roam-graph-viewer "~/.scripts/chromium_without_toolbar.sh")
+
+(use-package org-roam-server
+  :ensure t
+  :config
+  (setq org-roam-server-host "127.0.0.1"
+        org-roam-server-port 8080
+        org-roam-server-authenticate nil
+        org-roam-server-label-truncate t
+        org-roam-server-label-truncate-length 60
+        org-roam-server-label-wrap-length 20))
+
+(setq org-journal-dir (concat org-directory "Journal/"))

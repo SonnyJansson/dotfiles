@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: org-haskell
+# uuid: org-haskell
+# key: haskell
+# --
+#+begin_src haskell
+$0
+#+end_src
