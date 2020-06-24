@@ -7,12 +7,12 @@
 killall -q polybar
 
 # Wait until the processes have been shut down
-while pgrep -xc polybar > 0; do sleep 1; done
+while [ pgrep -xc polybar > 0 ]; do sleep 1; done
 
 # Launch bar1 and bar2
 #polybar example &
 
-polybar zyphbar -c /home/sonny/.config/polybar/config
+polybar zyphbar -c /home/zyphicx/.config/polybar/config
 
 echo "Bars launched..."
 

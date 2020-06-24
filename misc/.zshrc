@@ -1,5 +1,5 @@
 export TERM="xterm-256color"
-export PATH=~/.emacs.d/bin/:~/.cabal/bin:~/.local/bin:$PATH
+export PATH=~/.scripts/:~/.emacs.d/bin/:~/.cabal/bin:~/.local/bin:$PATH
 
 #Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
