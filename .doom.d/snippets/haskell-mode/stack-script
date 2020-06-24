@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: stack-script
+# uuid: haskell-stack-script
+# key: script
+# --
+#!/usr/bin/env stack
+{-
+stack script
+--resolver lts-16.0
+-}
+
+-- Stack script generated using yasnippets, the stack command to be ran can be specified within the comment above.
+-- Use --resolver to specify resolver version.
+-- Use --package to specify external dependencies.
+-- Note, you cannot have spaces between the '--' and the words 'package' and 'resolver'
+-- '--package reanimate' is valid, '-- package reanimate' is NOT
