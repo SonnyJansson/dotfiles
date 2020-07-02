@@ -1,0 +1,8 @@
+#!/bin/sh
+
+themes_file=~/.scripts/data/pywal-themes
+
+theme=$(cat $themes_file | tr -s " " | cut -d " " -f1 | dmenu -l 10)
+
+grep "^${theme} " $themes_file | sed "s/\S\+\s\+//" | xargs wal --theme
+notify-send "Changed theme to $theme" -t 2000

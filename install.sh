@@ -12,6 +12,9 @@ ln -sv "$D/.i3" ~
 # Fonts
 ln -sv "$D/.fonts" ~
 
+# Newsboat
+ln -sv "$D/.newsboat" ~
+
 # Scripts
 ln -sv "$D/.scripts" ~
 

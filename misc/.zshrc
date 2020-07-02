@@ -1,6 +1,8 @@
 export TERM="xterm-256color"
 export PATH=~/.scripts/:~/.emacs.d/bin/:~/.cabal/bin:~/.local/bin:$PATH
 
+(cat ~/.cache/wal/sequences &) # Loadl pywal theme when a new terminal is opened
+
 #Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -66,5 +68,6 @@ PROMPT='%F{196}[%F{106}%n@%F{033}%m %~%F{196}]%F{255}%(!.#.$) %F{reset_color}'
 alias less='less -Q'
 alias man='man -P "less -Q"'
 alias ls='ls --color="always"'
+alias grep='grep --color=auto'
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
